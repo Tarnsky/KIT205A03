@@ -71,7 +71,7 @@ Graph prims_mst(Graph* self) {
 	int* Q = malloc(self->V);
 	for (int i = 0; i < 1; i++)
 	{
-		//loop though edges
+		//loop though edges starting with root node to get first city/cities visited 
 		EdgeNodePtr current = self->edges[i].head;
 		while (current != NULL) {
 			if (vistied[i] == 666) {
@@ -86,9 +86,7 @@ Graph prims_mst(Graph* self) {
 		}
 	}
 
-	//nodes connected by edges then arnt connected from there
-	//need to make a loop of what i have done below but when a city is reached for the first time add them to a q
-	 //then loop though q adding them to F
+		// Loop though cities visted to connect with unconnected city
 		for (int i = 0; i < self->V; i++)
 		{	
 			//loop though edges
