@@ -60,7 +60,7 @@ Graph prims_mst(Graph* self) {
 	int* vistied = malloc(self->V);
 	int cost = 0;
 	int Qtotal = 0;
-	for (int i = 0; i < self->V; i++) 
+	for (int i = 0; i < self->V; i++)
 	{
 		min_cost_to_v[i] = 100;
 		vistied[i] = 666;
@@ -86,29 +86,29 @@ Graph prims_mst(Graph* self) {
 		}
 	}
 
-		// Loop though cities visted to connect with unconnected city
-		for (int i = 0; i < self->V; i++)
-		{	
-			//loop though edges
-			EdgeNodePtr current = self->edges[i].head;
-			//if there are still edges check if they have been visted 
-			while (current != NULL){
-				if (vistied[i] != 666) {
-					//set the min cost to the weigh of the edge 
-					min_cost_to_v[i] = current->edge.weight;
-					//add the node to graph F
-					Edge new_node;
-					printf("\n At city %d \n", i);
-					new_node.weight = min_cost_to_v[i];
-					new_node.to_vertex = current->edge.to_vertex;
-					//set node to visited 
-					vistied[current->edge.to_vertex] = 1;
-					insert_at_front(&F.edges[i], new_node);
-					//calculate total cost of MST
-					cost = cost + min_cost_to_v[i];
-				}
-				current = current->next;
+	// Loop though cities visted to connect with unconnected city
+	for (int i = 0; i < self->V; i++)
+	{
+		//loop though edges
+		EdgeNodePtr current = self->edges[i].head;
+		//if there are still edges check if they have been visted 
+		while (current != NULL) {
+			if (vistied[i] != 666) {
+				//set the min cost to the weigh of the edge 
+				min_cost_to_v[i] = current->edge.weight;
+				//add the node to graph F
+				Edge new_node;
+				printf("\n At city %d \n", i);
+				new_node.weight = min_cost_to_v[i];
+				new_node.to_vertex = current->edge.to_vertex;
+				//set node to visited 
+				vistied[current->edge.to_vertex] = 1;
+				insert_at_front(&F.edges[i], new_node);
+				//calculate total cost of MST
+				cost = cost + min_cost_to_v[i];
 			}
+			current = current->next;
+		}
 	}
 	print_graph(&F);
 	printf("\n total cost %d ", cost);
