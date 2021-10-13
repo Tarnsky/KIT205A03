@@ -1,0 +1,7 @@
+﻿  graph.c
+  main.c
+C:\Users\tedkr\source\repos\kit205assignment3\kit205assignment3\main.c(39,13): warning C4013: 'print_Graph' undefined; assuming extern returning int
+C:\Users\tedkr\source\repos\kit205assignment3\kit205assignment3\main.c(42,7): warning C4013: 'getch' undefined; assuming extern returning int
+  Generating Code...
+C:\Users\tedkr\source\repos\kit205assignment3\kit205assignment3\graph.c(84): warning C4716: 'prims_mst': must return a value
+  kit205assignment3.vcxproj -> C:\Users\tedkr\source\repos\kit205assignment3\Debug\kit205assignment3.exe
