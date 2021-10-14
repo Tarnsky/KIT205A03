@@ -17,9 +17,9 @@ typedef struct graph {
     EdgeList* edges;
 } Graph;
 
-void init_graph(Graph* G);
+void init_graph(Graph* self);
 void insert_at_front(EdgeList* self, Edge data);
-void print_graph(Graph* G);
-void in_deegree(Graph* G);
+void print_graph(Graph* self);
+void in_degree(Graph* self);
 //void destroy_graph(Graph* G);
 Graph prims_mst(Graph* self);
