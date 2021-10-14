@@ -18,6 +18,7 @@ typedef struct graph {
 } Graph;
 
 void init_graph(Graph* self);
+void add_edge(Graph* self);
 void insert_at_front(EdgeList* self, Edge data);
 void print_graph(Graph* self);
 void in_degree(Graph* self);
